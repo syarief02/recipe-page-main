@@ -96,7 +96,7 @@ main {
     background-color: hsl(0, 0%, 100%);
     /* White */
     border-radius: 1rem;
-    max-width: 600px;
+    max-width: 37.5rem;
     /* Mobile first */
     width: 100%;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
@@ -216,9 +216,7 @@ main {
     list-style: decimal inside;
     font-family: 'Outfit', sans-serif;
     font-size: 0.9375rem;
-    /* 15px */
     color: hsl(30, 10%, 34%);
-    /* Stone 600 */
     line-height: 1.5;
 }
 
@@ -228,12 +226,12 @@ main {
 
 .instruction-list li:last-child {
     margin-bottom: 0;
+    /* if you have a special rule for the last child */
 }
 
-/* Bold the first few words in each instruction for emphasis */
 .instruction-list li strong {
     font-weight: 700;
-    /* Outfit Bold */
+    /* bold the first phrase */
 }
 
 /* ===================================================================
@@ -290,9 +288,9 @@ main {
    Responsive Breakpoints (Desktop)
    =================================================================== */
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .recipe-card {
-        max-width: 680px;
+        max-width: 42.5rem;
     }
 
     .recipe-title {
@@ -323,9 +321,9 @@ main {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
     .recipe-card {
-        max-width: 720px;
+        max-width: 45rem;
     }
 
     .recipe-title {
