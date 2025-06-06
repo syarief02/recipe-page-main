@@ -1,0 +1,357 @@
+/* ===================================================================
+   Reset & Global Settings
+   =================================================================== */
+
+/* Box-sizing reset for easier layout control */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margins and paddings */
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+/* Base body styles */
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(30, 18%, 87%);
+    /* Stone 150 */
+    color: hsl(30, 10%, 34%);
+    /* Stone 600 for body text */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility: anchor links */
+a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===================================================================
+   Load Custom Fonts (from local assets/fonts folder)
+   =================================================================== */
+
+/* Outfit – Regular (400) */
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/static/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Outfit – SemiBold (600) */
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/static/Outfit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Outfit – Bold (700) */
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/outfit/static/Outfit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Young Serif – Regular (400) */
+@font-face {
+    font-family: 'Young Serif';
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ===================================================================
+   Layout for the Recipe Card
+   =================================================================== */
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* The white “card” container */
+.recipe-card {
+    background-color: hsl(0, 0%, 100%);
+    /* White */
+    border-radius: 1rem;
+    max-width: 600px;
+    /* Mobile first */
+    width: 100%;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* ===================================================================
+   Recipe Image
+   =================================================================== */
+
+.recipe-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    padding: 1.5rem;
+    border-radius: 2rem;
+}
+
+/* ===================================================================
+   Typography
+   =================================================================== */
+
+.recipe-title {
+    font-family: 'Young Serif', serif;
+    font-size: 1.75rem;
+    /* 28px */
+    color: hsl(24, 5%, 18%);
+    /* Stone 900 */
+    margin: 1.5rem 1.25rem 0.5rem;
+}
+
+.description {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    /* 16px */
+    color: hsl(30, 10%, 34%);
+    /* Stone 600 */
+    margin: 0 1.25rem 1.5rem;
+    line-height: 1.5;
+}
+
+/* Section headings (h2) */
+.section-heading {
+    font-family: 'Young Serif', serif;
+    font-size: 1.25rem;
+    /* 20px */
+    color: hsl(14, 45%, 36%);
+    /* Brown 800 */
+    margin-bottom: 0.75rem;
+}
+
+/* ===================================================================
+   Preparation Time Box (pink background)
+   =================================================================== */
+
+.prep-time {
+    background-color: hsl(330, 100%, 98%);
+    /* Rose 50 (very pale pink) */
+    padding: 1rem 1.25rem;
+    margin: 0 1.25rem 1.5rem;
+    border-radius: 0.25rem;
+}
+
+.prep-list {
+    list-style: none;
+}
+
+.prep-list li {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    /* 15px */
+    color: hsl(30, 10%, 34%);
+    /* Stone 600 */
+    margin-bottom: 0.5rem;
+    display: flex;
+}
+
+.prep-list li:last-child {
+    margin-bottom: 0;
+}
+
+.prep-label {
+    font-weight: 600;
+    /* Outfit SemiBold */
+    margin-right: 0.5rem;
+    color: hsl(14, 45%, 36%);
+    /* Brown 800 for labels */
+}
+
+/* ===================================================================
+   Ingredients List
+   =================================================================== */
+
+.ingredients {
+    margin: 0 1.25rem 1.5rem;
+}
+
+.ingredient-list {
+    list-style: disc inside;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    /* 15px */
+    color: hsl(30, 10%, 34%);
+    /* Stone 600 */
+    line-height: 1.5;
+}
+
+/* ===================================================================
+   Instructions List
+   =================================================================== */
+
+.instructions {
+    margin: 0 1.25rem 1.5rem;
+}
+
+.instruction-list {
+    list-style: decimal inside;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    /* 15px */
+    color: hsl(30, 10%, 34%);
+    /* Stone 600 */
+    line-height: 1.5;
+}
+
+.instruction-list li {
+    margin-bottom: 0.75rem;
+}
+
+.instruction-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Bold the first few words in each instruction for emphasis */
+.instruction-list li strong {
+    font-weight: 700;
+    /* Outfit Bold */
+}
+
+/* ===================================================================
+   Nutrition Table
+   =================================================================== */
+
+.nutrition {
+    margin: 0 1.25rem 2rem;
+}
+
+.nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    /* 15px */
+    color: hsl(30, 10%, 34%);
+    /* Stone 600 */
+}
+
+.nutrition-table th,
+.nutrition-table td {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid hsl(30, 54%, 90%);
+    /* Stone 100 for the separator */
+}
+
+/* Remove border under last row */
+.nutrition-table tr:last-child th,
+.nutrition-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===================================================================
+   Attribution Footer
+   =================================================================== */
+
+.attribution {
+    font-size: 0.6875rem;
+    /* 11px */
+    text-align: center;
+    color: hsl(30, 10%, 34%);
+    /* Stone 600 */
+    margin: 1.5rem 1rem 1rem;
+    line-height: 1.4;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* ===================================================================
+   Responsive Breakpoints (Desktop)
+   =================================================================== */
+
+@media (min-width: 768px) {
+    .recipe-card {
+        max-width: 680px;
+    }
+
+    .recipe-title {
+        font-size: 2rem;
+        /* 32px */
+        margin: 2rem 1.5rem 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        /* 16px */
+        margin: 0 1.5rem 2rem;
+    }
+
+    .prep-time {
+        margin: 0 1.5rem 2rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .ingredients,
+    .instructions,
+    .nutrition {
+        margin: 0 1.5rem 2rem;
+    }
+
+    .attribution {
+        margin: 2rem 1rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .recipe-card {
+        max-width: 720px;
+    }
+
+    .recipe-title {
+        font-size: 2.25rem;
+        /* 36px */
+        margin: 2.5rem 2rem 1.25rem;
+    }
+
+    .description {
+        font-size: 1.0625rem;
+        /* 17px */
+        margin: 0 2rem 2.5rem;
+    }
+
+    .prep-time {
+        margin: 0 2rem 2.5rem;
+        padding: 1.5rem 2rem;
+    }
+
+    .ingredients,
+    .instructions,
+    .nutrition {
+        margin: 0 2rem 2.5rem;
+    }
+
+    .attribution {
+        margin: 2.5rem 1.5rem 2.5rem;
+    }
+}
